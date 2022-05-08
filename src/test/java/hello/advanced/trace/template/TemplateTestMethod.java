@@ -24,6 +24,24 @@ public class TemplateTestMethod {
         logic2.execute();
     }
 
+    @Test
+    void templateMethodV2(){
+        AbstractTemplate logic1 = new AbstractTemplate() {
+            @Override
+            protected void call() {
+                log.info("Business 1");
+            }
+        };
+        AbstractTemplate logic2 = new AbstractTemplate() {
+            @Override
+            protected void call() {
+                log.info("Business 2");
+            }
+        };
+        logic1.execute();
+        logic2.execute();
+    }
+
 
     private void logic1(){
         long startTime = System.currentTimeMillis();
